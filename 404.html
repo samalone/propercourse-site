@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found · Proper Course</title>
+  <script>
+    // Prospero moved to its own host; forward old deep links there.
+    if (/^\/prospero(\/|$)/.test(location.pathname)) {
+      location.replace("https://prospero.propercourse.app" + location.pathname + location.search + location.hash);
+    }
+  </script>
+  <link rel="icon" href="/favicon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pontano+Sans:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="https://llamagraphics.com/">Llamagraphics</a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="/index.html">Proper Course</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+  </header>
+  <main>
+    <article class="prose">
+      <h1>Page not found</h1>
+      <p>Sorry, there’s nothing here. Try the <a href="/index.html">Proper Course home page</a>.</p>
+    </article>
+  </main>
+</body>
+</html>
