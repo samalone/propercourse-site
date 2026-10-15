@@ -5,9 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Page not found · Proper Course</title>
   <script>
-    // Prospero moved to its own host; forward old deep links there.
+    // Services that used to share this domain; forward old links to them.
+    // Prospero moved to its own host.
     if (/^\/prospero(\/|$)/.test(location.pathname)) {
       location.replace("https://prospero.propercourse.app" + location.pathname + location.search + location.hash);
+    }
+    // EYC Weather is still served from proper-course.app.
+    if (/^\/eyc-weather(\/|$)/.test(location.pathname)) {
+      location.replace("https://proper-course.app" + location.pathname + location.search + location.hash);
     }
   </script>
   <link rel="icon" href="/favicon.png">
