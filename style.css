@@ -1,0 +1,183 @@
+/* Proper Course website. Plain CSS, no build step. */
+
+:root {
+  --text: #3a4246;
+  --heading: #2f383c;
+  --muted: #6b7378;
+  --link: #2f383c;
+  --notice-bg: #e3e6ef;
+  --rule: #d9dde0;
+  --bg: #ffffff;
+
+  --font-heading: "Source Serif 4", Georgia, serif;
+  --font-body: "Pontano Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+a { color: var(--link); text-underline-offset: 3px; }
+a:hover { color: #000; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* Header */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 40px;
+}
+
+.wordmark {
+  font-family: var(--font-body);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #111;
+  text-decoration: none;
+}
+
+.site-nav { display: flex; gap: 20px; font-size: 16px; }
+.site-nav a { text-decoration: none; white-space: nowrap; }
+.site-nav a:hover, .site-nav a[aria-current="page"] { text-decoration: underline; }
+
+/* Banner photo with a gentle wave along its bottom edge */
+
+.banner {
+  height: 250px;
+  overflow: hidden;
+  clip-path: polygon(
+    0 0, 100% 0, 100% 88%,
+    90% 92%, 75% 96%, 60% 97%, 45% 96%, 30% 94%, 15% 92%, 0 91%
+  );
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 42%;
+}
+
+/* Main content */
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 40px 64px;
+}
+
+.product {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr) 270px;
+  gap: 48px;
+  align-items: start;
+}
+
+.app-icon {
+  width: 110px;
+  border-radius: 24px;
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 82px;
+  line-height: 1.05;
+  color: var(--heading);
+  margin: 0 0 24px;
+  letter-spacing: -0.01em;
+}
+
+h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  color: var(--heading);
+  line-height: 1.25;
+}
+
+.notice {
+  background: var(--notice-bg);
+  padding: 16px 16px;
+  margin: 0 0 24px;
+}
+
+.notice p { margin: 0; }
+
+.screenshot { width: 100%; }
+
+.page-links { margin-top: 40px; font-size: 15px; }
+
+/* Long-form text pages (privacy policy) */
+
+.prose { max-width: 760px; margin: 0 auto; }
+.prose h1 { font-size: 56px; }
+.prose h2 { font-size: 32px; margin: 48px 0 12px; }
+.prose h3 { font-size: 22px; margin: 36px 0 8px; }
+.prose li { margin-bottom: 8px; }
+.prose .updated { color: var(--muted); }
+.prose .toc { padding-left: 1.4em; }
+
+.table-wrap { overflow-x: auto; margin: 16px 0; }
+.prose table { border-collapse: collapse; font-size: 15px; min-width: 520px; }
+.prose td, .prose th {
+  border: 1px solid var(--rule);
+  padding: 8px 10px;
+  vertical-align: top;
+  text-align: left;
+}
+
+/* Footer */
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 40px 40px;
+  font-size: 14px;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  justify-content: space-between;
+}
+
+.site-footer a { color: var(--muted); }
+
+/* Narrow screens */
+
+@media (max-width: 900px) {
+  .product { grid-template-columns: 80px minmax(0, 1fr); gap: 24px; }
+  .app-icon { width: 80px; border-radius: 18px; }
+  .product .screenshot-col { grid-column: 1 / -1; max-width: 300px; margin: 0 auto; }
+  h1 { font-size: 56px; }
+}
+
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  .site-header { padding: 18px 16px; flex-wrap: wrap; row-gap: 6px; }
+  .site-nav { gap: 16px; font-size: 15px; }
+  .wordmark { font-size: 22px; }
+  .banner { height: 160px; }
+  main { padding: 24px 16px 48px; }
+  .site-footer { padding: 20px 16px 32px; }
+  .product { grid-template-columns: 1fr; }
+  .app-icon { width: 72px; border-radius: 16px; }
+  h1 { font-size: 44px; margin-bottom: 16px; }
+  .prose h1 { font-size: 40px; }
+}
