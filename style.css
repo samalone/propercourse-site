@@ -56,15 +56,15 @@ img { max-width: 100%; height: auto; display: block; }
 .site-nav a { text-decoration: none; white-space: nowrap; }
 .site-nav a:hover, .site-nav a[aria-current="page"] { text-decoration: underline; }
 
-/* Banner photo with a gentle wave along its bottom edge */
+/* Banner photo with a gentle wave along its bottom edge. The curve is the
+   #banner-wave clip path defined at the top of index.html, the same shape
+   Squarespace used: one S-curve across the full width. */
 
 .banner {
   height: 250px;
   overflow: hidden;
-  clip-path: polygon(
-    0 0, 100% 0, 100% 88%,
-    90% 92%, 75% 96%, 60% 97%, 45% 96%, 30% 94%, 15% 92%, 0 91%
-  );
+  -webkit-clip-path: url(#banner-wave);
+  clip-path: url(#banner-wave);
 }
 
 .banner img {
