@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["34CZE96W95.com.llamagraphics.proper-course"],
+        "components": [
+          { "/": "/join", "comment": "Invitation links; the token is in the URL fragment" },
+          { "/": "/join/", "comment": "The same, with a trailing slash" }
+        ]
+      }
+    ]
+  }
+}

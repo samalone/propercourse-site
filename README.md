@@ -8,6 +8,8 @@ GitHub Pages. Plain HTML and CSS with no build step: edit a file, push to
 - `privacy.html` — privacy policy (the App Store Connect listing links here)
 - `style.css` — shared styles; fonts come from Google Fonts
 - `images/` — banner photo, app icon, screenshot
+- `join/index.html` — shown for invitation links (`/join#<token>`) when the app isn't installed
+- `.well-known/apple-app-site-association` — lets iOS open `/join` links in the app (served thanks to `.nojekyll`)
 
 Preview by opening `index.html` in a browser; all links are relative.
 
