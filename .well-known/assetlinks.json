@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.llamagraphics.propercourse",
+      "sha256_cert_fingerprints": [
+        "74:D2:92:2A:9D:54:5F:A2:4C:5A:FA:E7:2A:EB:5C:F9:5F:02:21:93:CE:66:A0:1A:33:D7:68:2B:9B:F2:F6:B0"
+      ]
+    }
+  }
+]

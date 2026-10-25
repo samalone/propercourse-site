@@ -10,6 +10,7 @@ GitHub Pages. Plain HTML and CSS with no build step: edit a file, push to
 - `images/` — banner photo, app icon, screenshot
 - `join/index.html` — shown for invitation links (`/join#<token>`) when the app isn't installed
 - `.well-known/apple-app-site-association` — lets iOS open `/join` links in the app (served thanks to `.nojekyll`)
+- `.well-known/assetlinks.json` — lets Android open `/join` links in the app; it names the Android release key's certificate
 
 Preview by opening `index.html` in a browser; all links are relative.
 
